@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Coin Flipper</title>
+<style type="text/css">
+  #header{
+    background: red;
+    width: 100%;
+  }
+  #questions{
+    background-color: lightblue;
+     width: 100%;
+  }
+  #footer{
+    background-color: pink;
+     width: 100%;
+  }
+</style>
+  </head>
+
+  <body>
+  <div id="header"><h1>Triva</h1></div>
+  <div id="questions"><button id="startButton">START</button></div>
+  <div id="footer">footer</div>
+   
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script type="text/javascript">
+
+  //lets store our trivia questions in an object
+  var trivia = {
+      question: "This is the first question"
+    , answers: ["answers1","answer2","answer3","answer4"]
+    , correctAnswer: 0
+  }
+
+  $("#startButton").on('click', function populate() {
+    var testDiv = document.createElement("div");
+    testDiv.innerHTML = trivia.question + trivia.answers;
+    var questionsDiv = document.getElementById('questions');
+    questionsDiv.appendChild(testDiv);
+  });
+
+  </script>
+
+  </body>
+
+</html>
